@@ -35,6 +35,7 @@ a:hover {
 }
 
 body {
+  padding: 8px;
 }
 
 h1 {
@@ -105,20 +106,11 @@ button:focus-visible {
   transform: translateY(30%);
 }
 
-.hero-text {
-}
-
 .hero-text h1 {
   font-size: 2rem;
 }
 
-.hero-text p {
-}
-
-.hero-text button {
-}
-
-.box-button{
+.box-button {
   display: flex;
   gap: 18px;
 }
@@ -126,3 +118,144 @@ button:focus-visible {
 .hero-tex-bold {
   color: var(--secendry-color);
 }
+
+/* responsive */
+/* ---------- Breakpoints ---------- */
+
+/* Large tablets / small desktops */
+@media (max-width: 1024px) {
+  :root {
+    --gap-lg: 28px;
+  }
+  .hero {
+    gap: var(--gap-md);
+    max-width: 920px;
+    transform: translateY(18%);
+  }
+  .logo {
+    max-height: 56px;
+  }
+}
+
+/* Tablets and large phones */
+@media (max-width: 768px) {
+  :root {
+    --gap-lg: 20px;
+    --gap-md: 16px;
+  }
+
+  /* stack hero vertically for narrow screens */
+  .hero {
+    flex-direction: column-reverse; /* text then media (or adjust as needed) */
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--gap-md);
+    transform: none; /* remove translate to avoid overflow */
+    padding: 1.5rem;
+  }
+
+  .hero-text {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-img {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  /* typography */
+  .hero-text h1 {
+    font-size: clamp(1.4rem, 4.2vw, 2rem);
+  }
+  p {
+    font-size: clamp(0.95rem, 2.8vw, 1rem);
+  }
+
+  /* logo */
+  .logo {
+    max-height: 48px;
+  }
+
+  /* buttons become full-width vertical stack */
+  .box-button {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+  }
+  button {
+    width: 100%;
+    min-width: 0;
+    padding: 0.85em 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile (small phones) */
+@media (max-width: 480px) {
+  :root {
+    --gap-md: 12px;
+    --gap-sm: 10px;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  .header {
+    padding: 6px 8px;
+    width: 100%;
+  }
+
+  .logo {
+    max-height: 40px;
+  }
+
+  .hero {
+    padding: 1rem;
+    gap: var(--gap-sm);
+  }
+  .hero-img img {
+    width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 1.5rem;
+    line-height: 1.15;
+  }
+  p {
+    font-size: 0.95rem;
+  }
+
+  .box-button {
+    gap: 10px;
+  }
+  button {
+    padding: 0.8em;
+    font-size: 0.98rem;
+  }
+}
+
+/* Optional utility: center content for very wide screens */
+@media (min-width: 1600px) {
+  .header,
+  .hero {
+    max-width: 1400px;
+  }
+}
+
+/* small accessibility hint: focus-visible outline */
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(100, 108, 255, 0.18);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* End responsive additions */
