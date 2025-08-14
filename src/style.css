@@ -1,25 +1,26 @@
 :root {
+  /* font */
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  box-sizing: border-box;
-  padding: 0;
-  margin:0;
-
-  color-scheme: light dark;
-  color: var(--text-color);
-  background-color: var(--bg-color);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: var(--text-color);
+  background-color: var(--bg-color);
 
   /* colors */
   --main-color: #1153c0;
   --secendry-color: #ef4c4f;
   --bg-color: #242424;
   --text-color: #eaeaec;
+
+  color-scheme: light dark;
 }
 
 a {
@@ -33,13 +34,11 @@ a:hover {
 }
 
 body {
-
 }
 
 /* logo style */
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  height: fit-content;
   will-change: filter;
   transition: filter 300ms;
 }
@@ -75,3 +74,12 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 /* end button style */
+
+/* header */
+.header {
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+}
